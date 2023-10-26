@@ -1,0 +1,37 @@
+user = [
+    'Murtazayev',
+    'Ozod',
+    '+998915575575',
+    'qwerty12345'
+]
+
+from random import randint
+
+for i in range(1, 4):
+    user_pasword = input('Enter your pasword: ')
+
+    if user_pasword == user[-1]:
+        print('welcom to you profil')
+        break
+    elif i == 3:
+        task = randint(10000, 99999)
+        number = input('Telefon raqamingizni kiriting: ')
+        if number[0] == '+' and len(number) == 13 and number[1:].isnumeric():
+            if number == user[-2]:
+                user_task = input(f'Tasdiqlash raqamini kiriting "{task}":')
+                if str(task) == user_task:
+                    print('Welcome to your profil!')
+                else:
+                    print('tasdiqlash raqamini kiriting\n'
+                          '5 daqiqadan sung urinib kuring!')
+
+
+            else:
+                print('Roblack\nGoodbye')
+
+        else:
+            print('Raqam xato kiritildi!\n5 daqiqadan sung urinib kuring!')
+
+
+    else:
+        print('Pasword is`nt correct!\nTry again')
